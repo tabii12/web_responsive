@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/dangky.css">
+    <link rel="stylesheet" href="css/chitiet.css">
+    <link rel="stylesheet" href="css/giohang.css">
+</head>
+<body>
+    
+    <section id="dk">
+        <i class="fa-regular fa-circle-xmark x" onclick="_close()"></i>
+        <div class="row">
+            <div class="sanphamhot">
+                <div class="linehr"><hr></div>
+                <div class="title">Đăng ký</div>
+                <div class="linehr"><hr></div>
+            </div>
+        </div>
+            
+        <div class="dangky">
+            <form id="registrationForm" action="">
+                <input type="text" name="sdt" id="sdt" placeholder="Nhập số điện thoại của bạn">
+                <span class="error-message" id="sdt-error"></span><br><br>
+                <input type="password" name="mk" id="mk" placeholder="Nhập mật khẩu">
+                <span class="error-message" id="mk-error"></span><br><br>
+                <input type="password" name="xnmk" id="xnmk" placeholder="Xác nhận mật khẩu">
+                <span class="error-message" id="xnmk-error"></span><br><br>
+            </form>
+            
+            <div class="submit-dk">
+                <button type="button" onclick="dangky()">Đăng kýa</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="chitiet">
+        <i class="fa-regular fa-circle-xmark x" onclick="close_ct()"></i>
+        <div class="row">
+            <div class="sanphamhot">
+                <div class="linehr"><hr></div>
+                <div class="title">chi tiết sản phẩm</div>
+                <div class="linehr"><hr></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="ct_left">
+                <div class="show-chitiet"><img id="show-chitiet" src="img/sp1.jpg" alt=""></div>
+                <div class="imgchon">
+                    <div class="chon1"><img onclick="hinh_ct(1)" src="img/sp1.jpg" alt=""></div>
+                    <div class="chon1"><img onclick="hinh_ct(2)" src="img/sp2.jpg" alt=""></div>
+                    <div class="chon1"><img onclick="hinh_ct(3)" src="img/sp3.jpg" alt=""></div>
+                    <div class="chon1"><img onclick="hinh_ct(4)" src="img/sp5.jpg" alt=""></div>
+                </div>
+            </div>
+
+            <div class="ct_right">
+                <div class="right-item">Đồ uống</div>
+                <div class="right-item" dongia="1500000">25.000đ</div>
+                <div class="right-item">Mô tả: thức uống được tạo ra bằng sự pha chế đầy tinh tế của nhân loại</div>
+                <div class="right-item"><input type="number" placeholder="" value="1" min="1"> chọn số lượng</div> 
+                <div class="right-item" id="fm" onclick="add_gh(this)">Mua ngay</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="giohang">
+        <i class="fa-regular fa-circle-xmark x" onclick="close_gh()"></i>
+        <div class="row">
+            <div class="sanphamhot">
+                <div class="linehr"><hr></div>
+                <div class="title">giỏ hàng</div>
+                <div class="linehr"><hr></div>
+            </div>
+            <div id="table"> 
+                <table border="1px" id="showgh">
+                    <tr>
+                        <th>STT</th>
+                        <th>Hình</th>
+                        <th>Tên</th>
+                        <th>Giá</th>
+                        <th>Số lượng</th>
+                        <th>Tổng</th>
+                        <th>Xóa</th>
+                    </tr>
+                    <tbody id="sp_show"></tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <header ><img src="img/header.png" alt=""></header>
+
+        <nav>
+            <ul class="menu">
+                <li>trang chủ</li>
+                <li onclick="hien_gh()">giỏ hàng</li>
+                <li onclick="hien()">đăng ký</li>
+            </ul>
+        </nav>
+
+        <div class="row">
+            <div class="banner">
+                <i class="fa-solid fa-angle-left dinhvi1" onclick="left()"></i>
+                <i class="fa-solid fa-angle-right dinhvi2" onclick="right()"></i>
+
+                <div id="show"><img  id="slide" src="img/banner1.png" alt=""></div>
+                <div class="khung">
+                    <div class="nuttron" onclick="doihinh(1)"></div>
+                    <div class="nuttron" onclick="doihinh(2)"></div>
+                    <div class="nuttron" onclick="doihinh(3)"></div>
+                </div>
+            </div>
+            <div class="hinh1"><img src="img/subbanner1.jpg" alt=""></div>
+            <div class="hinh2"><img src="img/subbanner2.jpg" alt=""></div>
+            <div class="hinh3"><img src="img/subbanner3.jpg" alt=""></div>
+        </div>
+
+
+        <div class="row">
+            <div class="sanphamhot">
+                <div class="linehr"><hr></div>
+                <div class="title">sản phẩm bán chạy</div>
+                <div class="linehr"><hr></div>
+            </div>
+        </div>
+
+        <div class="row product">
+            <div class="sanpham">
+                <img src="img/sp1.jpg" alt="">
+                <h5 id="tensp">Kem ly dâu sữa</h5>
+                <h4 id="giasp" dongia="25000">25.000đ</h4>
+                <input type="number" value="1" min="1"> chọn số lượng
+                <button id="fm" onclick="add_gh(this)">Mua ngay</button>
+                <button class="button" onclick="hien_ct()">Chi tiết</button>
+            </div>
+            <div class="sanpham">
+                <img src="img/sp2.jpg" alt="">
+                <h5>Ô long tuyết lê khổng lồ</h5>
+                <h4 dongia="45000">45.000đ</h4>
+                <input type="number" value="1" min="1"> chọn số lượng
+                <button id="fm" onclick="add_gh(this)">Mua ngay</button>
+                <button class="button" onclick="hien_ct()">Chi tiết</button>
+            </div>
+            <div class="sanpham">
+                <img src="img/sp3.jpg" alt="">
+                <h5>Trà chanh mật ong giả tay khổng lồ</h5>
+                <h4 dongia="43000">43.000đ</h4>
+                <input type="number" value="1" min="1"> chọn số lượng
+                <button id="fm" onclick="add_gh(this)">Mua ngay</button>
+                <button class="button" onclick="hien_ct()">Chi tiết</button>
+            </div>
+            <div class="sanpham">
+                <img src="img/sp4.jpg" alt="">
+                <h5>Trà chanh mật ong giả tay</h5>
+                <h4 dongia="30000">30.000đ</h4>
+                <input type="number" value="1" min="1"> chọn số lượng
+                <button id="fm" onclick="add_gh(this)">Mua ngay</button>
+                <button class="button" onclick="hien_ct()">Chi tiết</button>
+            </div>
+            <div class="sanpham">
+                <img src="img/sp5.jpg" alt="">
+                <h5>Ô long sữa trân châu ngũ cốc</h5>
+                <h4 dongia="25000">25.000đ</h4>
+                <input type="number" value="1" min="1"> chọn số lượng
+                <button id="fm" onclick="add_gh(this)">Mua ngay</button>
+                <button class="button" onclick="hien_ct()">Chi tiết</button>
+            </div>
+            <div class="sanpham">
+                <img src="img/sp6.jpg" alt="">
+                <h5>Sửa tươi trân châu đường hổ khổng lồ</h5>
+                <h4 dongia="45000">45.000đ</h4>
+                <input type="number" value="1" min="1"> chọn số lượng
+                <button id="fm" onclick="add_gh(this)">Mua ngay</button>
+                <button class="button" onclick="hien_ct()">Chi tiết</button>
+            </div>
+            <div class="sanpham">
+                <img src="img/sp7.jpg" alt="">
+                <h5>Người bạn xanh sửa nhài khổng lồ</h5>
+                <h4 dongia="45000">45.000đ</h4>
+                <input type="number" value="1" min="1"> chọn số lượng
+                <button id="fm" onclick="add_gh(this)">Mua ngay</button>
+                <button class="button" onclick="hien_ct()">Chi tiết</button>
+            </div>
+            <div class="sanpham">
+                <img src="img/sp8.jpg" alt="">
+                <h5>Kem ly vani dâu</h5>
+                <h4 dongia="25000">25 .000đ</h4>
+                <input type="number" value="1" min="1"> chọn số lượng
+                <button id="fm" onclick="add_gh(this)">Mua ngay</button>
+                <button class="button" onclick="hien_ct()">Chi tiết</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="main-footer">
+            <div class="footer-logo">
+                <img src="img/ft_logo.png" alt="">
+            </div>
+            <div class="footer-1">
+                <ul>
+                    <li class="footer-title">Công ty CP TM & Dv Taco Việt Nam</li>
+                    <li class="footer-line">
+                        <i style="color: #deac38;" class="fa-solid fa-location-dot"></i>
+                        Tầng 2 tòa nhà T10, Times City Vĩnh Tuy, Hai Bà Trưng, Hà Nội.
+                    </li>
+                    <li class="footer-line">
+                        <i style="color: #deac38;" class="fa-solid fa-phone"></i>
+                        1900.63.69.36
+                       </li>
+                       <li class="footer-line">
+                           <i style="color: #deac38;" class="fa-solid fa-envelope"></i>
+                           info@tocotocotea.com
+                       </li>
+                       <li class="footer-line">
+                        Số ĐKKD: 0106341306. Ngày cấp: 16/03/2017.
+                    </li>
+                       <li class="footer-line">
+                           Nơi cấp: Sở kế hoạch và Đầu tư Thành phố Hà Nội.
+                       </li>
+                       <div class="footer-line">
+                           <i style="color: #deac38; padding: 0 5px;" class="fa-brands fa-facebook"></i>  
+                           <i style="color: #deac38; padding: 0 5px;" class="fa-brands fa-instagram"></i>  
+                           <i style="color: #deac38; padding: 0 5px;" class="fa-brands fa-youtube"></i>  
+                           <i style="color: #deac38; padding: 0 5px;" class="fa-brands fa-twitter"></i>  
+                            <i style="color: #deac38; padding: 0 5px;" class="fa-brands fa-google-plus"></i>
+                     </div>
+                    <div class="footer-download-app">
+                        <img style="width: 132px; height: 38px;" src="img/Googleplay.png" alt="">
+                        <img style="width: 132px; height: 38px;" src="img/Appstore.png" alt="">
+                        <br>
+                        <img style="width: 132px; height: 38px;" src="img/bo_cong_thuong_grande.png" alt="">
+                    </div>
+                </ul>
+            </div>
+            <div class="footer-2">
+                 <ul>
+                    <li class="footer-title">Về chúng tôi</li>
+                    <li class="about-us"><a href="">Giới thiệu về TocoToco</a></li>
+                    <li class="about-us"><a href="">Nhượng quyền</a></li>
+                    <li class="about-us"><a href="">TIn tức khuyến mại</a></li>
+                    <li class="about-us"><a href="">Quy định chung</a></li>
+                    <li class="about-us"><a href="">TT liên hệ & ĐKKD</a></li>
+                </ul>
+            </div>
+               <div class="footer-3">
+                   <ul>
+                       <li class="footer-title">Chính sách</li>
+                       <li class="footer-line"><a href="">Chính sách thành viên</a></li>
+                       <li class="footer-line"><a href="">Hình thức thanh toán</a></li>
+                    <li class="footer-line"><a href="">Vận chuyển giao hàng</a></li>
+                    <li class="footer-line"><a href="">Đổi trả và hoàn tiền</a></li>
+                     <li class="footer-line"><a href="">Bảo vệ thông tin cá nhân</a></li>
+                     <li class="footer-line"><a href="">Bảo trì, bảo hành</a></li>
+                 </ul>
+            </div>
+        </div>
+        <hr style="margin: 0px 124px;">
+        <div class="bottom-footer">
+                <div class="left">
+                    ToCoToCo - Thương hiệu trà sữa tiên phong sử dụng nguồn nông sản Việt Nam
+                </div>
+                <div class="righ">
+                    Copyrights © 2019 by ToCoToCoTea. All rights reserved.
+                </div>
+        </div>
+    </footer>
+
+    
+
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/dangky.js"></script>
+    <script src="js/chitiet.js"></script>
+    <script src="js/giohang.js"></script>
+    <script src="https://kit.fontawesome.com/7d00a1e008.js" crossorigin="anonymous"></script>
+
+</body>
+
+</div>
+</html>

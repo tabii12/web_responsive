@@ -1,0 +1,16 @@
+#table{
+    display: flex;
+    justify-content: center;
+}
+#table img {
+    width: 100px;
+    height: 100px;
+}
+#table td{
+    padding: 5px;
+    text-align: center;
+}
+#table th{
+    padding: 5px;
+    text-align: center;
+}

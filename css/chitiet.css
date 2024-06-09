@@ -1,0 +1,53 @@
+#chitiet{
+    box-shadow: 0px 0px 0px 2px rgba(25, 25, 22, 0.5);
+}
+#chitiet .row{
+    display: flex;
+}
+.ct_left{
+    width: 50%;
+}
+
+.ct_right{
+    width: 50%;
+    padding: 10px;
+    color: #deac38;
+}
+.ct_right input{
+    width: 50px;
+    text-align: center;
+}
+.ct_right .right-item{
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+#fm {
+    font-size: 18px;
+}
+
+.show-chitiet{
+    width: 100%;
+    height: 500px;
+}
+.show-chitiet img{
+    width: 100%;
+    height: 100%;
+}
+
+.imgchon{
+    display: flex;
+    width: 100%;
+    height: 100px;
+    justify-content: space-around;
+    align-items: center;
+}
+.chon1{
+    padding: 5px;
+    width: 100px;
+    height: 100px;
+}
+.chon1 img{
+    width: 100%;
+    height: 100%;
+}

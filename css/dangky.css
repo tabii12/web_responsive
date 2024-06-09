@@ -1,0 +1,45 @@
+.dangky{
+    margin: 0 auto;
+    width: 600px;
+    min-height: 300px;
+}
+.dangky form{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.dangky input{
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #deac38;
+    color: #deac38;
+    font-size: 20px;
+    padding: 5px;
+    width: 60%;
+}
+.submit-dk{
+    display: flex;
+    justify-content: center;
+}
+.submit-dk button{
+    background-color: #deac38;
+    color: white;
+    width: 150px;
+    height: 50px;
+    border-radius: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+}
+.submit-dk button:hover{
+    border: 1px solid black;
+}
+.error-message {
+    color: red;
+    font-size: 12px;
+    display: none;
+}
