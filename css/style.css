@@ -24,6 +24,9 @@ header img{
     width: 100%;
     height: 100%;
 }
+.header__bars{
+    display: none;
+}
 
 nav{
     background-color: #d3b673;
@@ -31,6 +34,14 @@ nav{
     width: 100%;
     height: 50px;
     margin: 5px 0;
+}
+.header__logo{
+    width: 20px;
+    height: 20px;
+}
+.header__logo img{
+    width: 100%;
+    height: 100%;
 }
 .menu{
     list-style: none;
@@ -383,6 +394,33 @@ footer .main-footer .footer-3 li.footer-line a{
 }
 
 @media only screen and (max-width: 767px) {
+    #dk{
+        width: 100vw;
+        left: 0;
+    }
+    #chitiet{
+        width: 100vw;
+        left: 0;
+    }
+    #giohang{
+        width: 100vw;
+        left: 0;
+    }
+    nav{
+        position: relative;
+        min-height: 33px;
+    }
+    .header__bars{
+        display: block;
+        position: absolute;
+        font-size: 30px;
+    }
+    .show{
+        display: block;
+        position: absolute;
+        top: 80px;
+        z-index: 1;
+    }
     .container {
         width: 100%;
         padding: 0 20px;
@@ -402,9 +440,6 @@ footer .main-footer .footer-3 li.footer-line a{
     .sanpham img {
         height: auto;
     }
-    .khung {
-        flex-direction: column;
-    }
     .footer-download-app img {
         width: 100px;
         height: 30px;
@@ -415,19 +450,53 @@ footer .main-footer .footer-3 li.footer-line a{
     }
     .product{
         display: grid;
-        grid-template-columns: 1fr 1fr;
     }
     .sanpham {
-        flex: 1 1 calc(50% - 10px); /* 2 products per row for tablet-sized screens */
+        flex: 1 1 calc(50% - 10px);
         min-width: calc(50% - 10px);
     }
     nav{
         height: auto;
     }
+    .hinh1{
+        display: none;
+    }
+    .hinh2{
+        display: none;
+    }
+    .hinh3{
+        display: none;
+    }
+    .banner{
+        width: 100%;
+    }
+    footer .main-footer{
+        margin: 0 20px;
+        display: grid;
+        grid-template-areas: 
+        "aa bb"
+        "cc dd";
+    }
+    footer .main-footer .footer-logo img{
+        width: 100%;
+        grid-area: aa;
+    }
+    footer .main-footer .footer-1{
+        width: 100%;
+        grid-area: cc;
+    }
+    footer .main-footer .footer-2{
+        width: 100%;
+        grid-area: bb;
+    }
+    footer .main-footer .footer-3{
+        width: 100%;
+        grid-area: dd;
+    }
 }
-@media (max-width: 480px) {
+@media only screen and (max-width: 480px) {
     .sanpham {
-        flex: 1 1 calc(100% - 10px); /* 1 product per row for mobile screens */
+        flex: 1 1 calc(100% - 10px);
         min-width: calc(100% - 10px);
     }
 }

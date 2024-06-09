@@ -43,3 +43,12 @@ function doihinhauto(){
     
 }
 setInterval(doihinhauto, 2000);
+document.addEventListener('DOMContentLoaded', () => {
+    const bars = document.querySelector('.header__bars');
+    const navigation = document.querySelector('.menu');
+  
+    bars.addEventListener('click', () => {
+      navigation.classList.toggle('show');
+      navigation.style.zIndex = "-1";
+    });
+  });
